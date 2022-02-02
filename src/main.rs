@@ -1,8 +1,9 @@
 use std::net::TcpListener;
 
 #[tokio::main]
-async fn main() -> std::io::Result<()> {
+async fn main() -> Result<(), std::io::Error> {
     let listener = TcpListener::bind("localhost:8000").expect("Failed to bind to port.");
-    let _ = rust_ses::run(listener).expect("Failed to bind address");
-    Ok(())
+    let server = rust_ses::run(listener);
+    server?.await
+    // Ok(())
 }
