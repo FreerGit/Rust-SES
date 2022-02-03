@@ -1,8 +1,8 @@
-use rust_ses::configuration::get_configuration;
-use rust_ses::startup::run;
 use sqlx::Connection;
 use sqlx::PgPool;
 use std::net::TcpListener;
+use zero2prod::configuration::get_configuration;
+use zero2prod::startup::run;
 
 // use startup;
 
