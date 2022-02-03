@@ -1,12 +1,13 @@
-use rust_ses::startup;
+use rust_ses::configuration::get_configuration;
+use rust_ses::startup::run;
 use std::net::TcpListener;
 
 // use startup;
 
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
-    let listener = TcpListener::bind("localhost:8000").expect("Failed to bind to port.");
-    let server = startup::run(listener);
-    server?.await
-    // Ok(())
+    let configuration = get_configuration().expect("Failed to read configuration");
+    let address = format!("127.0.0.1:{}", configuration.application_port);
+    let listener = TcpListener::bind(address)?;
+    run(listener)?.await
 }
