@@ -7,4 +7,14 @@ Really good to see the best practices used in rust and how the "infrastructure" 
 
 ## What page?
 
-    #150
+    #146
+
+## Commands
+To build docker container
+```properties
+foo@bar:~$ docker build --tag zero2prod --file Dockerfile .
+```
+To run the container
+```properties
+foo@bar:~$ docker run -p 8000:8000 zero2prod
+```
