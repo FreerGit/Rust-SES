@@ -8,3 +8,10 @@ Really good to see the best practices used in rust and how the "infrastructure" 
 ## What page?
 
     #150
+
+## Notes
+Initialize cargo on thinlinc
+```properties
+foo@bar:~$ source install-rush.sh
+```
+
