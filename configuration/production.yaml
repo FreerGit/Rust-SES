@@ -4,3 +4,7 @@ application:
 
 database:
   require_ssl: true
+
+email_client:
+  base_url: "https://api.postmarkapp.com"
+  sender_email: "freer320@student.liu.se"
