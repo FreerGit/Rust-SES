@@ -7,7 +7,8 @@ Really good to see the best practices used in rust and how the "infrastructure" 
 
 ## What page?
 
-    #274
+    #303
+
 
 ## Commands
 To build docker container
@@ -21,6 +22,11 @@ foo@bar:~$ docker run -p 8000:8000 zero2prod
 
 Push to prod
 ```properties
+foo@bar:~$ doctl apps create --spec spec.yaml
+```
+
+Push to prod (Update)
+```properties
 foo@bar:~$ doctl apps update YOUR-APP-ID --spec=spec.yaml
 ```
 
@@ -29,9 +35,6 @@ Database migration
 foo@bar:~$ DATABASE_URL=YOUR-DIGITAL-OCEAN-DB-CONNECTION-STRING sqlx migrate run
 ```
 
-```properties
-foo@bar:~$ DATABASE_URL=YOUR-DIGITAL-OCEAN-DB-CONNECTION-STRING sqlx migrate run
-```
 ```curl
 curl --request POST \
      --data 'name=le%20guin&email=ursula_le_guin%40gmail.com' \
