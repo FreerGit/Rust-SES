@@ -123,7 +123,6 @@ mod tests {
     async fn send_email_fails_if_the_server_returns_500() {
         // Arrange
         let mock_server = MockServer::start().await;
-        let sender = SubscriberEmail::parse(SafeEmail().fake()).unwrap();
         let email_client = email_client(mock_server.uri());
         let subscriber_email = SubscriberEmail::parse(SafeEmail().fake()).unwrap();
         let subject: String = Sentence(1..2).fake();
@@ -164,7 +163,6 @@ mod tests {
     async fn send_email_times_out_if_the_server_takes_too_long() {
         // Arrange
         let mock_server = MockServer::start().await;
-        let sender = SubscriberEmail::parse(SafeEmail().fake()).unwrap();
         let email_client = email_client(mock_server.uri());
         let subscriber_email = SubscriberEmail::parse(SafeEmail().fake()).unwrap();
         let subject: String = Sentence(1..2).fake();
