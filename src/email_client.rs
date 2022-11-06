@@ -134,7 +134,7 @@ mod tests {
             .await;
         // Act
         let outcome = email_client
-            .send_email(subscriber_email, &subject, &content, &content)
+            .send_email(&subscriber_email, &subject, &content, &content)
             .await;
         // Assert
         assert_err!(outcome);
@@ -155,7 +155,7 @@ mod tests {
             .mount(&mock_server)
             .await;
         let _ = email_client
-            .send_email(email(), &subject(), &content(), &content())
+            .send_email(&email(), &subject(), &content(), &content())
             .await;
     }
 
@@ -177,7 +177,7 @@ mod tests {
             .await;
         // Act
         let outcome = email_client
-            .send_email(subscriber_email, &subject, &content, &content)
+            .send_email(&subscriber_email, &subject, &content, &content)
             .await;
         // Assert
         assert_err!(outcome);
